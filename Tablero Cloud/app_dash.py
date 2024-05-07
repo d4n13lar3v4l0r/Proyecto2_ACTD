@@ -2,16 +2,13 @@ import dash
 from dash import dcc  # dash core components
 from dash import html # dash html components
 from dash.dependencies import Input, Output
-import psycopg2
 from dotenv import load_dotenv # pip install python-dotenv
 import os
-import tensorflow as tf
 import keras
 import psycopg2
 import pandas as pd
 import os
 import plotly.express as px
-import seaborn as sns
 
 columnas = ['Saldo_Limite', 'Sexo', 'Edad', 'Cuenta_Sept', 'Cuenta_Ago',
        'Cuenta_Jul', 'Cuenta_Jun', 'Cuenta_May', 'Cuenta_Abr', 'Pago_Sept',
