@@ -9,6 +9,7 @@ import psycopg2
 import pandas as pd
 import os
 import plotly.express as px
+import numpy as np
 
 columnas = ['Saldo_Limite', 'Sexo', 'Edad', 'Cuenta_Sept', 'Cuenta_Ago',
        'Cuenta_Jul', 'Cuenta_Jun', 'Cuenta_May', 'Cuenta_Abr', 'Pago_Sept',
@@ -192,7 +193,7 @@ def update_output_div(sexo_1,edad_1,educacion_1,estado_civil,saldo_limite,deuda_
         x[dic_educacion[educacion_1]] = 1
     x['StatusFinal'] = sum(estado)
     # Check inputs are correct 
-    ypred = model.predict([x.iloc[0].to_list()])  
+    ypred = model.predict(np.array([x.iloc[0].to_list()]))  
     return f"La probabilidad de default es de {ypred[0][0]}"
 
 @app.callback(
