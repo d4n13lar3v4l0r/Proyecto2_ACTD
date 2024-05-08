@@ -43,6 +43,7 @@ external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 server = app.server
 
+# configurar para el env.
 # path to env file
 env_path="C:/Users/mparr/OneDrive - Universidad de los Andes/01_Semestres/7 Semestre/ANALITICA COMPUTACIONAL/Proyecto2/env/app.env"
 # load env 
@@ -86,8 +87,7 @@ df3 = pd.io.sql.read_sql_query(query3,engine)
 fig2 = px.pie(df3, values="deuda_total", names="esdefault", title='Deuda total en default')
 
 #cargar archivo de disco
-model = keras.models.load_model("C:/Users/mparr/OneDrive - Universidad de los Andes/01_Semestres/7 Semestre/ANALITICA COMPUTACIONAL/Proyecto2/Proyecto2_ACTD/Modelos/modelo_P2.h5")
-
+model = keras.models.load_model("Modelos/modelo_P2.h5")
 
 # Cargar datos de una posible predicción
 app.layout = html.Div(
