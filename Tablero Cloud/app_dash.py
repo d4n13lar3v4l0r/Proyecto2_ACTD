@@ -85,7 +85,7 @@ df3 = pd.io.sql.read_sql_query(query3,engine)
 fig2 = px.pie(df3, values="deuda_total", names="esdefault", title='Deuda total en default')
 
 #cargar archivo de disco
-model = keras.models.load_model("C:/Users/mparr/OneDrive - Universidad de los Andes/01_Semestres/7 Semestre/ANALITICA COMPUTACIONAL/Proyecto2/Proyecto2_ACTD/Modelos/modelo_P2.keras")
+model = keras.models.load_model("C:/Users/mparr/OneDrive - Universidad de los Andes/01_Semestres/7 Semestre/ANALITICA COMPUTACIONAL/Proyecto2/Proyecto2_ACTD/Modelos/modelo_P2.h5")
 
 
 # Cargar datos de una posible predicción
@@ -193,7 +193,6 @@ def update_output_div(sexo_1,edad_1,educacion_1,estado_civil,saldo_limite,deuda_
     x['StatusFinal'] = sum(estado)
     # Check inputs are correct 
     ypred = model.predict([x.iloc[0].to_list()])  
-    print(x.iloc[0].to_list())
     return f"La probabilidad de default es de {ypred[0][0]}"
 
 @app.callback(
