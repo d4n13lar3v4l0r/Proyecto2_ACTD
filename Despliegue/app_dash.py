@@ -45,7 +45,7 @@ server = app.server
 
 # configurar para el env.
 # path to env file
-env_path="C:/Users/mparr/OneDrive - Universidad de los Andes/01_Semestres/7 Semestre/ANALITICA COMPUTACIONAL/Proyecto2/env/app.env"
+env_path="C:/Users/mparr/OneDrive - Universidad de los Andes/01_Semestres/7 Semestre/ANALITICA COMPUTACIONAL/Proyecto 2ACTD/env/app.env"
 # load env 
 load_dotenv(dotenv_path=env_path)
 # extract env variables
